@@ -1,0 +1,137 @@
+<html>
+<head>
+<style>
+#content {
+    width: 900px;
+    margin: 0px auto;
+    padding: 2em 1em;
+}
+
+#header {
+	background-color: #EBE9EA;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 900px;
+    min-height: 150px;
+}
+
+#column-right {
+	background-color: #EBE9EA;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px 8px 8px 8px;
+    float: right;
+    min-height: 225px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 180px;
+	padding-top:10px;
+}
+
+#central {
+	background-color: #EBE9EA;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px 8px 8px 8px;
+    float: left;
+    min-height: 225px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 685px;
+	padding:10px;
+}
+
+#footer {
+	background-color: #EBE9EA;
+    border: 1px solid #D2D2D2;
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 10px;
+    text-align: center;
+    clear: left;
+    width: 900px;
+    min-height: 100px;
+}
+
+#popup {
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+#popup2 {
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.content-popup {
+margin:0px auto;
+margin-top:50px;
+padding:10px;
+width:500px;
+min-height:250px;
+border-radius:4px;
+background-color:#FFFFFF;
+box-shadow: 0 2px 5px #666666;
+}
+
+.close {
+position:relative;
+left:480px;
+}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#open').click(function(){
+		$('#popup').fadeIn('slow');
+		//$('body').css('opacity', '0.5');
+		return false;
+	});
+	
+	$('#close').click(function(){
+		$('#popup').fadeOut('slow');
+		//$('body').css('opacity', '1');
+		return false;
+	});
+	
+	$('#open2').click(function(){
+		$('#popup2').fadeIn('slow');
+		//$('body').css('opacity', '0.5');
+		return false;
+	});
+	
+	$('#close2').click(function(){
+		$('#popup2').fadeOut('slow');
+		//$('body').css('opacity', '1');
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div id="content">
+	<div id="header">Cabecera</div>
+	<div id="central"><a href="#" id="open2">Abrir ventana 2</a></div>
+	<div id="column-right"><a href="#" id="open">Abrir ventana 1</a></div>
+	<div id="footer">Pie de p&aacute;gina</div>
+</div>
+<div id="popup" style="display: none;">
+    <div class="content-popup">
+        <div class="close"><a href="#" id="close"><img src="images/close.png"/></a></div>
+        <div>Contenido VENTANA 1</div>
+    </div>
+</div>
+<div id="popup2" style="display: none;">
+    <div class="content-popup">
+        <div class="close"><a href="#" id="close2"><img src="images/close.png"/></a></div>
+        <div>Contenido VENTANA 2</div>
+    </div>
+</div>
+</body>
+</html>
